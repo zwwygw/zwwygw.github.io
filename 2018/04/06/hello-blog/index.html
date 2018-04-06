@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh-CN.yml">
 <meta property="og:image" content="https://www.zybuluo.com/cmd/img/sync%20preview.png">
 <meta property="og:image" content="http://www.sublimetext.com/screenshots/3.0/windows.png">
-<meta property="og:updated_time" content="2018-04-06T18:03:09.042Z">
+<meta property="og:updated_time" content="2018-04-06T18:11:14.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客建立感言">
 <meta name="twitter:description" content="感言,分享,博客搭建">
@@ -280,7 +280,7 @@
 <p>&emsp;&emsp;spfk就是目前我所使用的主题，next是更简洁的主题，而gal主题则是仿某弟弟的网站风格，当初第一次进弟弟的网站时不是被其丰富的内容（滑稽）所震撼，而是爱上这个网站的风格，写的真的是很漂亮。  </p>
 <h3 id="添加评论区"><a href="#添加评论区" class="headerlink" title="添加评论区"></a>添加评论区</h3><p>&emsp;&emsp;主题作者已经讲各大评论加入进代码了，所以只需要在主题配置文件_config.yml中进行相应的修改就行了。本blog采用的是Gitment评论。虽然只能github用户才能评论，但考虑到github的用户群体也能接受。具体使用详情可参考<a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="noopener">Gitment作者博客。</a></p>
 <h3 id="个人搭建遇见及问题解决方法。"><a href="#个人搭建遇见及问题解决方法。" class="headerlink" title="个人搭建遇见及问题解决方法。"></a>个人搭建遇见及问题解决方法。</h3><p>&emsp;&emsp;对于主题的修改由于自己现在的前端知识少的可怜可以说是几乎就没有，所以也就没做什么改动，自己改社交图案就花了一晚上找到关键代码处进行修改(流下了不学无术的眼泪)。<br>&emsp;&emsp;自己主要在修改社交图标上花了大量的时间，找了好几个esj以及css文件才推导出要修改的地方(研究别人的代码真是累，更何况还是没有文档的)，并且期间幸运的修改文件debug时导致报错(唯一一次看见程序报错还高兴)才知道某一文件在哪。其实大部分社交图标都可以通过修改主题的配置文件_config.yml添加到页面上，但我想添加一个Steam的图标却必须自己修改原文文件。其实要修改的地方就几个。<br>&emsp;&emsp;<br>首先便是添加图标文件到img文件夹中(..\spfk\source\img)图标样式和文件中的其他社交图标差不多，利用ps就可简单的修改。 推荐图标下载网站<a href="http://www.iconfont.cn/" target="_blank" rel="noopener">阿里巴巴矢量图标库</a>，然后找到<code>\spfk\source\css\_partial</code>中的main.styl然后就可以放现图标样式的代码就在这里面，添加自己的代码进去就行了。比如我要加的是steam的所以在图标样式代码处添加下面的代码就可以了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a.steam &#123;</span><br><span class="line">                background:url(&apos;../img/steam.png&apos;) center no-repeat #0d1e4c;</span><br><span class="line">                border:1px solid #0d1e4c;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><p>&emsp;&emsp;感谢全球最大同性交友社区GitHub，感谢spfk主题作者luuman，感谢Gitment作者Shiquan Sun等等…</p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>&emsp;&emsp;感谢全球最大同性交友社区GitHub，感谢spfk主题作者luuman，感谢Gitment作者Shiquan Sun等等…</p>
 <h2 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h2><p>&emsp;&emsp;flag就不随便立了，洗洗睡了。下次更新blog就在<a href="https://github.com/zwwygw/ParkingSystem" target="_blank" rel="noopener">课设</a>写完后了。</p>
 
       
@@ -294,7 +294,7 @@
         <p><span>本文标题:</span><a href="/2018/04/06/hello-blog/">博客建立感言</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 张木昜 的个人博客">张木昜</a></p>
         <p><span>发布时间:</span>2018年04月06日 - 21时19分</p>
-        <p><span>最后更新:</span>2018年04月07日 - 02时03分</p>
+        <p><span>最后更新:</span>2018年04月07日 - 02时11分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/04/06/hello-blog/" title="博客建立感言">http://zwwygw.github.io/2018/04/06/hello-blog/</a>
             <span class="copy-path" data-clipboard-text="原文: http://zwwygw.github.io/2018/04/06/hello-blog/　　作者: 张木昜" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -313,7 +313,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建博客前"><span class="toc-number">1.</span> <span class="toc-text">搭建博客前</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown"><span class="toc-number">1.1.</span> <span class="toc-text">Markdown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown编辑器"><span class="toc-number">1.2.</span> <span class="toc-text">Markdown编辑器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建博客ing"><span class="toc-number">2.</span> <span class="toc-text">搭建博客ing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">2.1.</span> <span class="toc-text">工具准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题推荐"><span class="toc-number">2.2.</span> <span class="toc-text">主题推荐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加评论区"><span class="toc-number">2.3.</span> <span class="toc-text">添加评论区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#个人搭建遇见及问题解决方法。"><span class="toc-number">2.4.</span> <span class="toc-text">个人搭建遇见及问题解决方法。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感想"><span class="toc-number">3.</span> <span class="toc-text">感想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#期望"><span class="toc-number">4.</span> <span class="toc-text">期望</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建博客前"><span class="toc-number">1.</span> <span class="toc-text">搭建博客前</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown"><span class="toc-number">1.1.</span> <span class="toc-text">Markdown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown编辑器"><span class="toc-number">1.2.</span> <span class="toc-text">Markdown编辑器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建博客ing"><span class="toc-number">2.</span> <span class="toc-text">搭建博客ing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工具准备"><span class="toc-number">2.1.</span> <span class="toc-text">工具准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题推荐"><span class="toc-number">2.2.</span> <span class="toc-text">主题推荐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加评论区"><span class="toc-number">2.3.</span> <span class="toc-text">添加评论区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#个人搭建遇见及问题解决方法。"><span class="toc-number">2.4.</span> <span class="toc-text">个人搭建遇见及问题解决方法。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-number">3.</span> <span class="toc-text">感谢</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#期望"><span class="toc-number">4.</span> <span class="toc-text">期望</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
