@@ -2187,6 +2187,10 @@ a {
   background: url("../img/segmentfault.png") center no-repeat #009a61;
   border: 1px solid #009a61;
 }
+#header .header-nav .social a.steam {
+  background: url("../img/steam.png") center no-repeat #0d1e4c;
+  border: 1px solid #0d1e4c;
+}
 #header .switch-part {
   width: 100%;
   position: absolute;
