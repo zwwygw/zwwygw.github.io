@@ -2183,6 +2183,10 @@ a {
   background: url("../img/instagram.png") center no-repeat #125688;
   border: 1px solid #125688;
 }
+#header .header-nav .social a.steam {
+  background: url("../img/steam.png") center no-repeat #125688;
+  border: 1px solid #f00;
+}
 #header .header-nav .social a.segmentfault {
   background: url("../img/segmentfault.png") center no-repeat #009a61;
   border: 1px solid #009a61;
