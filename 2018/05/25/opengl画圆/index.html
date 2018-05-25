@@ -14,7 +14,7 @@
 <meta property="og:description" content="OpenGL">
 <meta property="og:locale" content="zh-CN.yml">
 <meta property="og:image" content="http://zwwygw.github.io/2018/05/25/opengl画圆/20180525.png">
-<meta property="og:updated_time" content="2018-05-25T15:44:42.806Z">
+<meta property="og:updated_time" content="2018-05-25T15:50:09.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenGL画圆算法">
 <meta name="twitter:description" content="OpenGL">
@@ -256,7 +256,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="OpenGL画圆之角度离散法"><a href="#OpenGL画圆之角度离散法" class="headerlink" title="OpenGL画圆之角度离散法"></a>OpenGL画圆之角度离散法</h2><p>根据圆的参数方程为<code>x=a+Rcosθ;y=b+Rsinθ</code>;确定点的坐标.<br>圆心在原点的话，则<code>x=Rcosθ;y=Rsinθ</code>;θ角度为<code>2π/n*i</code>;其中n为构成圆边的点数,点越多锯齿越平滑，i为点的编号1-n；所以此时画圆<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DrawCircle</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">//绘制圆</span></span><br><span class="line">	glBegin(GL_POLYGON);</span><br><span class="line">		glNormal3f(<span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">1.0f</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">			glVertex2f(R*<span class="built_in">cos</span>(<span class="number">2</span>*Pi/n*i), R*<span class="built_in">sin</span>(<span class="number">2</span>*Pi/n*i));</span><br><span class="line">	glEnd();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="OpenGL画圆之角度离散法"><a href="#OpenGL画圆之角度离散法" class="headerlink" title="OpenGL画圆之角度离散法"></a>OpenGL画圆之角度离散法</h2><p>根据圆的参数方程为<code>x=a+Rcosθ;y=b+Rsinθ</code>;确定点的坐标.<br>圆心在原点的话，则<code>x=Rcosθ;y=Rsinθ</code>;θ角度为<code>2π/n*i</code>;其中n为构成圆边的点数,点越多锯齿越平滑，i为点的编号1-n；所以此时画圆<br><a id="more"></a><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DrawCircle</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">//绘制圆</span></span><br><span class="line">	glBegin(GL_POLYGON);</span><br><span class="line">		glNormal3f(<span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">1.0f</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">			glVertex2f(R*<span class="built_in">cos</span>(<span class="number">2</span>*Pi/n*i), R*<span class="built_in">sin</span>(<span class="number">2</span>*Pi/n*i));</span><br><span class="line">	glEnd();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="glBegin-参数可有"><a href="#glBegin-参数可有" class="headerlink" title="glBegin()参数可有"></a>glBegin()参数可有</h2><p>GL_POINTS：把每一个顶点作为一个点进行处理，顶点n即定义了点n，共绘制N个点<br>GL_LINES：把每一个顶点作为一个独立的线段，顶点2n－1和2n之间共定义了n条线段，总共绘制N/2条线段<br>GL_LINE_STRIP：绘制从第一个顶点到最后一个顶点依次相连的一组线段，第n和n-1个顶点定义了线段n，总共绘制n－1条线段<br>GL_LINE_LOOP：绘制从第一个顶点到最后一个顶点依次相连的一组线段，然后最后一个顶点和第一个顶点相连，第n和n-1个顶点定义了线段n，总共绘制n条线段<br>GL_TRIANGLES：把每个顶点作为一个独立的三角形，顶点3n－2、3n－1和3n定义了第n个三角形，总共绘制N/3个三角形<br>GL_TRIANGLE_STRIP：绘制一组相连的三角形，对于奇数n，顶点n、n+1和n+2定义了第n个三角形；对于偶数n，顶点n+1、n和n+2定义了第n个三角形，总共绘制N-2个三角形<br>GL_TRIANGLE_FAN：绘制一组相连的三角形，三角形是由第一个顶点及其后给定的顶点确定，顶点1、n-1和n-2定义了第n个三角形，总共绘制N-2个三角形<br>GL_QUADS：绘制由四个顶点组成的一组单独的四边形。顶点4n－3、4n－2、4n－1和4n定义了第n个四边形。总共绘制N/4个四边形<br>GL_QUAD_STRIP：绘制一组相连的四边形。每个四边形是由一对顶点及其后给定的一对顶点共同确定的。顶点2n、2n-1、2n-2和2n-3定义了第n个四边形，总共绘制N/2-1个四边形<br>GL_POLYGON：绘制一个凸多边形。顶点1到n定义了这个多边形。<br><img src="./20180525.png" alt="几何图元种类.jpg"></p>
 
       
@@ -270,7 +270,7 @@
         <p><span>本文标题:</span><a href="/2018/05/25/opengl画圆/">OpenGL画圆算法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 张木昜 的个人博客">张木昜</a></p>
         <p><span>发布时间:</span>2018年05月25日 - 23时09分</p>
-        <p><span>最后更新:</span>2018年05月25日 - 23时44分</p>
+        <p><span>最后更新:</span>2018年05月25日 - 23时50分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/05/25/opengl画圆/" title="OpenGL画圆算法">http://zwwygw.github.io/2018/05/25/opengl画圆/</a>
             <span class="copy-path" data-clipboard-text="原文: http://zwwygw.github.io/2018/05/25/opengl画圆/　　作者: 张木昜" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
