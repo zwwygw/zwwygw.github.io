@@ -3,19 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | 张木昜的博客|Zww&#39;s blog</title>
+  <title>OpenGL画圆算法 | 张木昜的博客|Zww&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="总结、感想、分享|Summary,feelings,sharing">
-<meta name="keywords" content="博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="张木昜的博客|Zww&#39;s blog">
-<meta property="og:url" content="http://zwwygw.github.io/archives/index.html">
+  <meta name="description" content="感言,分享,博客搭建">
+<meta name="keywords" content="OpenGL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenGL画圆算法">
+<meta property="og:url" content="http://zwwygw.github.io/2018/05/25/opengl画圆/index.html">
 <meta property="og:site_name" content="张木昜的博客|Zww&#39;s blog">
-<meta property="og:description" content="总结、感想、分享|Summary,feelings,sharing">
+<meta property="og:description" content="感言,分享,博客搭建">
 <meta property="og:locale" content="zh-CN.yml">
+<meta property="og:image" content="http://zwwygw.github.io/2018/05/25/opengl画圆/20180525.png">
+<meta property="og:updated_time" content="2018-05-25T15:34:07.982Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="张木昜的博客|Zww&#39;s blog">
-<meta name="twitter:description" content="总结、感想、分享|Summary,feelings,sharing">
+<meta name="twitter:title" content="OpenGL画圆算法">
+<meta name="twitter:description" content="感言,分享,博客搭建">
+<meta name="twitter:image" content="http://zwwygw.github.io/2018/05/25/opengl画圆/20180525.png">
   
     <link rel="alternative" href="/atom.xml" title="张木昜的博客|Zww&#39;s blog" type="application/atom+xml">
   
@@ -41,8 +44,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -211,93 +214,202 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-opengl画圆" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/05/25/opengl画圆/" class="archive-article-date">
-      <time datetime="2018-05-25T15:09:30.000Z" itemprop="datePublished">05-25</time>
+    <div class="article-meta">
+      <a href="/2018/05/25/opengl画圆/" class="article-date">
+      <time datetime="2018-05-25T15:09:30.000Z" itemprop="datePublished">2018-05-25</time>
 </a>
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/25/opengl画圆/">OpenGL画圆算法</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OpenGL画圆算法
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/学习/">学习</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGL/">OpenGL</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/04/06/hello-blog/" class="archive-article-date">
-      <time datetime="2018-04-06T13:19:23.000Z" itemprop="datePublished">04-06</time>
-</a>
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/06/hello-blog/">博客建立感言</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/感言/">感言</a>
+        <p>&emsp;&emsp; OpenGL画圆之角度离散法<br>根据圆的参数方程为<code>x=a+Rcosθ;y=b+Rsinθ</code>;确定点的坐标.<br>圆心在原点的话，则<code>x=Rcosθ;y=Rsinθ</code>;θ角度为<code>2π/n*i</code>;其中n为构成圆边的点数,点越多锯齿越平滑，i为点的编号1-n；所以此时画圆<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DrawCircle</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">//绘制圆</span></span><br><span class="line">	glBegin(GL_POLYGON);</span><br><span class="line">		glNormal3f(<span class="number">0.0f</span>, <span class="number">0.0f</span>, <span class="number">1.0f</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">			glVertex2f(R*<span class="built_in">cos</span>(<span class="number">2</span>*Pi/n*i), R*<span class="built_in">sin</span>(<span class="number">2</span>*Pi/n*i));</span><br><span class="line">	glEnd();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>glBegin()参数可有</p>
+<p>GL_POINTS：把每一个顶点作为一个点进行处理，顶点n即定义了点n，共绘制N个点</p>
+<p>GL_LINES：把每一个顶点作为一个独立的线段，顶点2n－1和2n之间共定义了n条线段，总共绘制N/2条线段</p>
+<p>GL_LINE_STRIP：绘制从第一个顶点到最后一个顶点依次相连的一组线段，第n和n-1个顶点定义了线段n，总共绘制n－1条线段</p>
+<p>GL_LINE_LOOP：绘制从第一个顶点到最后一个顶点依次相连的一组线段，然后最后一个顶点和第一个顶点相连，第n和n-1个顶点定义了线段n，总共绘制n条线段</p>
+<p>GL_TRIANGLES：把每个顶点作为一个独立的三角形，顶点3n－2、3n－1和3n定义了第n个三角形，总共绘制N/3个三角形</p>
+<p>GL_TRIANGLE_STRIP：绘制一组相连的三角形，对于奇数n，顶点n、n+1和n+2定义了第n个三角形；对于偶数n，顶点n+1、n和n+2定义了第n个三角形，总共绘制N-2个三角形</p>
+<p>GL_TRIANGLE_FAN：绘制一组相连的三角形，三角形是由第一个顶点及其后给定的顶点确定，顶点1、n-1和n-2定义了第n个三角形，总共绘制N-2个三角形</p>
+<p>GL_QUADS：绘制由四个顶点组成的一组单独的四边形。顶点4n－3、4n－2、4n－1和4n定义了第n个四边形。总共绘制N/4个四边形</p>
+<p>GL_QUAD_STRIP：绘制一组相连的四边形。每个四边形是由一对顶点及其后给定的一对顶点共同确定的。顶点2n、2n-1、2n-2和2n-3定义了第n个四边形，总共绘制N/2-1个四边形</p>
+<p>GL_POLYGON：绘制一个凸多边形。顶点1到n定义了这个多边形。</p>
+<p><img src="./20180525.png" alt="几何图元种类.jpg"></p>
+
+      
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/05/25/opengl画圆/">OpenGL画圆算法</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 张木昜 的个人博客">张木昜</a></p>
+        <p><span>发布时间:</span>2018年05月25日 - 23时09分</p>
+        <p><span>最后更新:</span>2018年05月25日 - 23时34分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/25/opengl画圆/" title="OpenGL画圆算法">http://zwwygw.github.io/2018/05/25/opengl画圆/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zwwygw.github.io/2018/05/25/opengl画圆/　　作者: 张木昜" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/06/hello-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博客建立感言</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
 
     
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'zwwygw',
+      repo: 'blog-s-comment',
+      oauth: {
+        client_id: 'eb90a1292cf2ae4e3d78',
+        client_secret: '2be71ee6bdc306aeb6dd949238ac19a095cb7ffa',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
 
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/04/06/hello-blog/" title="下一篇: 博客建立感言">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/25/opengl画圆/">OpenGL画圆算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/06/hello-blog/">博客建立感言</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
@@ -383,17 +495,6 @@ MathJax.Hub.Queue(function() {
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
